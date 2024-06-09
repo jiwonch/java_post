@@ -18,7 +18,7 @@ public class Main {
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     System.out.println("자바 게시판 시작");
-    int id = 1;
+    int articleLastId = 0;
 
     while (true) {
       System.out.print("명령) ");
@@ -31,7 +31,8 @@ public class Main {
         String title = sc.nextLine();
         System.out.print("내용 : ");
         String contents = sc.nextLine();
-        System.out.printf("%d번 게시물이 등록되었습니다.\n", id++);
+        int id = ++articleLastId;
+        System.out.printf("%d번 게시물이 등록되었습니다.\n", id);
       } else if(cmd.equals("exit")) {
         System.out.println("프로그램 끝");
         break;
